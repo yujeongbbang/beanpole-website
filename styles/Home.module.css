@@ -6,9 +6,9 @@
 
 .section {
   height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   position: absolute;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.section:nth-child(1) {
+/* .section:nth-child(1) {
   background-color: #ff6347;
 }
 
@@ -27,5 +27,4 @@
 
 .section:nth-child(3) {
   background-color: #1e90ff;
-}
-
+} */
