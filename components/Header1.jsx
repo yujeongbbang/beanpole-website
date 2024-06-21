@@ -1,87 +1,70 @@
 import React, { useState } from 'react';
 import styles from '../styles/Header1.module.css';
-
+import HeritageSubMenu from '../components/Submenu/HeritageSubMenu';
+import BrandsSubMenu from '../components/Submenu/BrandsSubMenu';
+import JournalSubMenu from '../components/Submenu/JournalSubMenu';
+import GoodActivitySubMenu from '../components/Submenu/GoodActivitySubMenu';
 
 const Header = () => {
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
 
-  const handleMouseEnter = () => {
-    setIsSubMenuOpen(true);
+  const handleMenuEnter = (menu) => {
+    setActiveMenu(menu);
   };
 
-  const handleMouseLeave = () => {
-    setIsSubMenuOpen(false);
+  const handleMenuLeave = () => {
+    setActiveMenu(null);
   };
 
   return (
     <header className={styles.header}>
-      {/* 로고 및 텍스트 로고 'BEANPOLE' */}
       <div className={styles.logo}>
-        <h1>BEANPOLE</h1>
+        <span>BEANPOLE</span>
       </div>
-
-      {/* 메뉴 항목들 */}
       <nav className={styles.nav}>
         <ul>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={isSubMenuOpen ? styles.active : ''}
+            onMouseEnter={() => handleMenuEnter('heritage')}
+            onMouseLeave={handleMenuLeave}
           >
-            <a href="#heritage">HERITAGE</a>
-            {isSubMenuOpen && (
-              <ul className={styles.submenu}>
-                <li><a href="#">HISTORY</a></li>
-                <li><a href="#">PHILOSOPHY</a></li>
-                <li><a href="#">THE ESSENTIAL</a></li>
-                <li><a href="#">Bicycle Story</a></li>
-                <li><a href="#">Signature Cheak</a></li>
-                <li><a href="#">Essential Items</a></li>
-              </ul>
+            <a href="#">HERITAGE</a>
+            {activeMenu === 'heritage' && (
+              <div className={styles.submenu}>
+                <HeritageSubMenu />
+              </div>
             )}
           </li>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={isSubMenuOpen ? styles.active : ''}
+            onMouseEnter={() => handleMenuEnter('brands')}
+            onMouseLeave={handleMenuLeave}
           >
-            <a href="#brands">BRANDS</a>
-            {isSubMenuOpen && (
-              <ul className={styles.submenu}>
-                <li><a href="#">MEN</a></li>
-                <li><a href="#">LADIES</a></li>
-                <li><a href="#">KIDS</a></li>
-                <li><a href="#">ACCESSORY</a></li>
-                <li><a href="#">GOLF</a></li>
-              </ul>
+            <a href="#">BRANDS</a>
+            {activeMenu === 'brands' && (
+              <div className={styles.submenu}>
+                <BrandsSubMenu />
+              </div>
             )}
           </li>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={isSubMenuOpen ? styles.active : ''}
+            onMouseEnter={() => handleMenuEnter('journal')}
+            onMouseLeave={handleMenuLeave}
           >
-            <a href="#journal">JOURNAL</a>
-            {isSubMenuOpen && (
-              <ul className={styles.submenu}>
-                <li><a href="#">BRAND CAMPAIGN</a></li>
-                <li><a href="#">COLLABORATION</a></li>
-                <li><a href="#">STYLE SNAPS</a></li>
-                <li><a href="#">CLASSIC MASTERY</a></li>
-              </ul>
+            <a href="#">JOURNAL</a>
+            {activeMenu === 'journal' && (
+              <div className={styles.submenu}>
+                <JournalSubMenu />
+              </div>
             )}
           </li>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={isSubMenuOpen ? styles.active : ''}
+            onMouseEnter={() => handleMenuEnter('good-activity')}
+            onMouseLeave={handleMenuLeave}
           >
-            <a href="#good-activity">GOOD ACTIVITY</a>
-            {isSubMenuOpen && (
-              <ul className={styles.submenu}>
-                <li><a href="#">GOOD CARE</a></li>
-                <li><a href="#">GOOD CYCLE</a></li>
-              </ul>
+            <a href="#">GOOD ACTIVITY</a>
+            {activeMenu === 'good-activity' && (
+              <div className={styles.submenu}>
+                <GoodActivitySubMenu />
+              </div>
             )}
           </li>
         </ul>
