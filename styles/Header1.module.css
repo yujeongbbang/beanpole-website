@@ -8,16 +8,16 @@
   padding: 20px 0; 
   color: black;
   background-color: white;
-  transition: height 0.3s ease, max-height 0.3s ease; /* max-height 속성 추가 */
+  transition: height 0.3s ease, max-height 0.3s ease;
   font-family: 'LeferiBaseType-RegularA';
   z-index: 1000;
-  overflow: hidden; /* 내용이 넘칠 때 처리 */
-  max-height: 60px; /* 초기 높이 설정 */
+  overflow: hidden;
+  max-height: 60px;
 }
 
 .header:hover {
-  height: 400px;
-  max-height: 400px;
+  height: 350px;
+  max-height: 350px;
 }
 
 .logo {
@@ -44,6 +44,8 @@
 .nav ul li {
   position: relative;
   margin-right: 60px;
+  font-size: 16px;
+
   padding: 0 10px; 
 }
 
@@ -55,7 +57,8 @@
   width: 300px;
 }
 
-.nav ul li:hover .submenu {
+.nav ul li:hover .submenu,
+.nav:hover .submenu {
   display: block;
 }
 
@@ -75,9 +78,8 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex;
   background-color: white;
-  flex-direction: column; /* 서브 메뉴 항목을 세로로 정렬 */
+  flex-direction: column;
 }
 
 .submenu ul li {
@@ -91,7 +93,6 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-
 
 @font-face {
   font-family: 'SUIT-Regular';
