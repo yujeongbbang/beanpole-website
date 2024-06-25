@@ -1,5 +1,7 @@
+import styles from '../styles/Page3.module.css';
+
 const Page3 = () => (
-  <div style={{ height: '100vh', backgroundColor: '#1e90ff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <div className={styles.page3Container}>
     <h1>Page 3</h1>
   </div>
 );

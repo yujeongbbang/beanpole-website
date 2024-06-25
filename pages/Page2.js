@@ -1,5 +1,7 @@
+import styles from '../styles/Page2.module.css';
+
 const Page2 = () => (
-  <div style={{ height: '100vh', backgroundColor: '#3cb371', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <div className={styles.page2Container}>
     <h1>Page 2</h1>
   </div>
 );
