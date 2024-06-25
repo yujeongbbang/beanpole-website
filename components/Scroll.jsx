@@ -1,4 +1,3 @@
-// components/Scroll.js
 import { useEffect, useState } from 'react';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
