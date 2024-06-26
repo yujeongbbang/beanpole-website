@@ -45,7 +45,7 @@ const Scroll = () => {
           style={{
             transform: `translateY(${(index - currentSection) * 100}vh)`,
             opacity: currentSection === index ? 1 : 0,
-            transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out'
+            transition: 'transform 1s ease-in-out, opacity 1s ease-in-out'
           }}
         >
           {section}

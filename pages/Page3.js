@@ -12,7 +12,8 @@ const Page3 = () => {
           <span className={styles.page3CateList}>MEN</span>
           <span className={styles.page3CateList}>LADIES</span>
           <span className={styles.page3CateList}>KIDS</span>
-          <br/>
+          </div>
+        <div className={styles.page3Category}>
           <span className={styles.page3CateList}>ACCESSORY</span>
           <span className={styles.page3CateList}>GOLF</span>
         </div>
