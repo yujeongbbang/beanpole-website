@@ -19,17 +19,13 @@ const Scroll = () => {
 
   const handleScroll = (e) => {
     e.preventDefault();
-    if (scrollTimeout) {
-      clearTimeout(scrollTimeout);
+    const delta = e.deltaY;
+
+    if (delta > 0 && currentSection < sections.length - 1) {
+      setCurrentSection(currentSection + 1);
+    } else if (delta < 0 && currentSection > 0) {
+      setCurrentSection(currentSection - 1);
     }
-    scrollTimeout = setTimeout(() => {
-      const delta = e.deltaY;
-      if (delta > 0 && currentSection < sections.length - 1) {
-        setCurrentSection(currentSection + 1);
-      } else if (delta < 0 && currentSection > 0) {
-        setCurrentSection(currentSection - 1);
-      }
-    }, 100);
   };
 
   useEffect(() => {
@@ -46,6 +42,11 @@ const Scroll = () => {
         <div
           key={index}
           className={`${styles.section} ${currentSection === index ? styles.activeSection : ''}`}
+          style={{
+            transform: `translateY(${(index - currentSection) * 100}vh)`,
+            opacity: currentSection === index ? 1 : 0,
+            transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out'
+          }}
         >
           {section}
         </div>

@@ -1,9 +1,24 @@
 import styles from '../styles/Page3.module.css';
 
-const Page3 = () => (
-  <div className={styles.page3Container}>
-    <h1>Page 3</h1>
-  </div>
-);
+const Page3 = () => {
+  return (
+    <div className={styles.page3Container}>
+      <div className={styles.page3TextContainer}>
+        <h1 className={styles.page3Title}>BRAND</h1>
+        <p className={styles.page3Subtitle}>
+         시대를 아우르는 클래식, <br />타임리스 캐주얼 웨어
+        </p>
+        <div className={styles.page3Category}>
+          <span className={styles.page3CateList}>MEN</span>
+          <span className={styles.page3CateList}>LADIES</span>
+          <span className={styles.page3CateList}>KIDS</span>
+          <br/>
+          <span className={styles.page3CateList}>ACCESSORY</span>
+          <span className={styles.page3CateList}>GOLF</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Page3;

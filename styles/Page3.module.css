@@ -6,6 +6,45 @@
     background-position: center; 
     background-repeat: no-repeat; 
     position: relative;
-    color: white;
+    color: black;
     overflow: hidden; 
   }
+
+  
+.page3TextContainer {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: left; 
+  opacity: 1; 
+}
+  
+.page3Title {
+  font-size: 50px;
+  letter-spacing: 4px; 
+}
+
+.page3Subtitle {
+  font-size: 18px;
+}
+
+.page3Category {
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+.page3CateList{
+  margin-right: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.page3CateList::after {
+  content: '|';
+  position: absolute;
+  right: -20px; 
+}
+
+.page3CateList:last-child::after {
+  content: '';
+}
