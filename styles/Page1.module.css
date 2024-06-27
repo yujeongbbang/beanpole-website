@@ -1,10 +1,7 @@
 .page1Container {
   height: 100vh;
   display: flex;
-  background-image: url('../Public/page1-1.jpg'); 
-  background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
+  flex-direction: column;
   position: relative;
   color: white;
   overflow: hidden;
@@ -48,8 +45,16 @@
   letter-spacing: 6px; 
 }
 
-
 .page1Subtitle {
   font-size: 18px;
   margin-top: 10px;
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }

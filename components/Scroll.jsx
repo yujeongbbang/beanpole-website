@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
 import Page3 from '../pages/Page3';
@@ -13,9 +13,8 @@ const Scroll = () => {
     <Page2 key="page2" isActive={currentSection === 1} />,
     <Page3 key="page3" isActive={currentSection === 2} />,
     <Page4 key="page4" isActive={currentSection === 3} />,
-    <Page5 key="page4" isActive={currentSection === 4} />
+    <Page5 key="page5" isActive={currentSection === 4} />
   ];
-  let scrollTimeout;
 
   const handleScroll = (e) => {
     e.preventDefault();

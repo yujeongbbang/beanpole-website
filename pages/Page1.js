@@ -1,40 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Slider from '../components/Slider';
+import Page1_1 from './Page1_1';
+import Page1_2 from './Page1_2';
+import Page1_3 from './Page1_3';
+import Page1_4 from './Page1_4';
 import styles from '../styles/Page1.module.css';
 
-const Page1 = ({ isActive }) => {
-  const [animateTitle, setAnimateTitle] = useState(false);
-  const [animateSubtitle, setAnimateSubtitle] = useState(false);
-
-  useEffect(() => {
-    if (isActive) {
-      setTimeout(() => {
-        setAnimateTitle(true);
-      }, 500);
-
-      setTimeout(() => {
-        setAnimateSubtitle(true);
-      }, 1000); 
-    } else {
-      setAnimateTitle(false);
-      setAnimateSubtitle(false);
-    }
-  }, [isActive]);
-
+const Page1 = () => {
   return (
     <div className={styles.page1Container}>
-      <div className={styles.page1TextContainer}>
-        <h1 className={`${styles.page1Title} ${animateTitle ? styles.animateSlideIn : ''}`}>
-          SEOUL CLASSIC with
-        </h1>
-        <h1 className={`${styles.page1Beanpole} ${animateTitle ? styles.animateSlideIn : ''}`}>
-          BEANPOLE
-        </h1>
-        {animateSubtitle && (
-          <p className={`${styles.page1Subtitle} ${styles.animateSlideIn}`}>
-            빈폴과 함께하는 서울 클래식 여정
-          </p>
-        )}
-      </div>
+      <Slider>
+        <Page1_1 />
+        <Page1_2 />
+        <Page1_3 />
+        <Page1_4 />
+      </Slider>
     </div>
   );
 };
