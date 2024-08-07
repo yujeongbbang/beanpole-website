@@ -1,12 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect}from 'react';
 import styles from '../styles/Page1_3.module.css';
 
-const Page1_3 = () => {
+const Page1_3 = ({ isActive }) => {
+  const [animateTitle, setAnimateTitle] = useState(false);
+  const [animateSubtitle, setAnimateSubtitle] = useState(false);
+  
+  useEffect(() => {
+    if (isActive) {
+      setAnimateTitle(false);
+      setAnimateSubtitle(false);
+      setTimeout(() => {
+        setAnimateTitle(true);
+      }, 0);
+      setTimeout(() => {
+        setAnimateSubtitle(true);
+      }, 500);
+    } else {
+      setAnimateTitle(false);
+      setAnimateSubtitle(false);
+    }
+  }, [isActive]);
   return (
-    <div className={styles.page1_3Container}>
-      <h1>Page 1-3</h1>
-      <p>Content for Page 1-3</p>
+    <div className={styles.page3Container}>
+    <div className={styles.page3TextContainer}>
+    <h1 className={`${styles.page3Title} ${animateTitle ? styles.animateSlideIn : ''}`}>
+          GOOD CARE
+        </h1>
+        <p className={`${styles.page3Subtitle} ${animateSubtitle ? styles.animateSlideIn : ''}`}>
+          여행을 위한 패킹&관리법
+        </p>
     </div>
+  </div>
   );
 };
 

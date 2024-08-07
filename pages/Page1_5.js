@@ -1,7 +1,7 @@
 import React,  { useEffect, useState } from 'react';
-import styles from '../styles/Page1_2.module.css';
+import styles from '../styles/Page1_5.module.css';
 
-const Page1_2 = ({ isActive }) => {
+const Page1_5 = ({isActive}) => {
   const [animateTitle, setAnimateTitle] = useState(false);
   const [animateSubtitle, setAnimateSubtitle] = useState(false);
   
@@ -22,17 +22,17 @@ const Page1_2 = ({ isActive }) => {
   }, [isActive]);
 
   return (
-    <div className={styles.page2Container}>
-    <div className={styles.page2TextContainer}>
-    <h1 className={`${styles.page2Title} ${animateTitle ? styles.animateSlideIn : ''}`}>
-          THE HISTORY OF LINEN
+    <div className={styles.page5Container}>
+    <div className={styles.page5TextContainer}>
+    <h1 className={`${styles.page5Title} ${animateTitle ? styles.animateSlideIn : ''}`}>
+         READY, GET SET, SUMMER!!
         </h1>
-        <p className={`${styles.page2Subtitle} ${animateSubtitle ? styles.animateSlideIn : ''}`}>
-          가장 오래된 천연 섬유, 인류의 역사를 함께하다
+        <p className={`${styles.page5Subtitle} ${animateSubtitle ? styles.animateSlideIn : ''}`}>
+          지금 여기 여름 시작, 빈폴멘 새로운 룩 바로보기
         </p>
     </div>
   </div>
   );
 };
 
-export default Page1_2;
+export default Page1_5;
